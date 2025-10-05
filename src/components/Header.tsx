@@ -33,12 +33,12 @@ export default function Header(){
       <div className="container flex items-center justify-between py-3">
         <Link to="/" className="text-2xl font-extrabold text-primary">E‑Store</Link>
         <nav className="flex items-center gap-4">
-          <Link to="/" className="hover:underline">Home</Link>
-          <Link to="/cart" className="relative">Cart <span className="ml-2 inline-block bg-primary text-white px-2 rounded-full text-xs">{cartCount}</span></Link>
+          <Link to="/" className="hover:underline text-gray-600">Home</Link>
+          <Link to="/cart" className="relative text-gray-600">Cart <span className="ml-2 inline-block bg-primary text-white px-2 rounded-full text-xs">{cartCount}</span></Link>
           {
             role === "admin" &&  
             <>
-             <Link to="/admin/create-product" className="hover:underline">Add Product</Link>
+             <Link to="/admin/create-product" className="hover:underline text-gray-600">Add Product</Link>
              <Link to="/admin/dashboard" className="bg-primary text-white px-3 py-1 rounded hover:opacity-90">
               Dashboard
             </Link>
@@ -48,10 +48,10 @@ export default function Header(){
          
          {token ? (
               <>
-              <Link to="/wishlist" className="relative">
+              <Link to="/wishlist" className="relative text-gray-600">
                 Wishlist <span className="ml-1 bg-pink-500 text-white px-2 rounded-full text-xs">{wishlistCount}</span>
               </Link>
-                <Link to="/profile" className="ml-2">{username}</Link>
+                <Link to="/profile" className="ml-2 text-gray-600">{username}</Link>
                 <button 
                   onClick={handleLogout} 
                   className="ml-2 text-sm text-red-500 hover:underline"
@@ -60,7 +60,7 @@ export default function Header(){
                 </button>
               </>
             ) : (
-              <Link to="/signin" className="ml-2">Sign in</Link>
+              <Link to="/signin" className="ml-2 text-gray-600">Sign in</Link>
             )}
           <DarkToggle />
         </nav>

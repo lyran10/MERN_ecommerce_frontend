@@ -30,7 +30,7 @@ export default function ProductCard({p}:{p:any}){
         />
         </div>
         <h3 className="mt-3 font-semibold">{p.title}</h3>
-        <p className="text-sm text-gray-500">{p.category}</p>
+        <p className="text-sm">{p.category}</p>
         <div className="mt-2 flex items-center justify-between">
           <div className="text-lg font-bold">₹{p.price}</div>
           <button className="btn">View</button>
